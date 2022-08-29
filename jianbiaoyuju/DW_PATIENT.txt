@@ -1,0 +1,111 @@
+CREATE TABLE DW_PATIENT (
+   HPID  VARCHAR2(40) NOT NULL,
+   NAME  VARCHAR2(50) NOT NULL,
+   SEX_CODE  VARCHAR2(2) NOT NULL,
+   SEX_NAME  VARCHAR2(20) NOT NULL,
+   BIRTHDAY  DATE NOT NULL,
+   TEL  VARCHAR2(20) NOT NULL,
+   CRED_TYPE_CODE  VARCHAR2(20) NOT NULL,
+   CRED_TYPE_NAME  VARCHAR2(100) NOT NULL,
+   CRED_NO  VARCHAR2(20) NOT NULL,
+   CARD_TYPE_CODE  VARCHAR2(2) NOT NULL,
+   CARD_NO  VARCHAR2(40) NOT NULL,
+   IDCARD  VARCHAR2(18) NOT NULL,
+   MARITAL_STATUS_CODE  VARCHAR2(2),
+   MARITAL_STATUS_NAME  VARCHAR2(20),
+   NATION_CODE  VARCHAR2(2),
+   NATION_NAME  VARCHAR2(5),
+   COUNTRY_CODE  VARCHAR2(20),
+   COUNTRY_NAME  VARCHAR2(100),
+   ADDRESS_HOUSE_NO  VARCHAR2(70),
+   ADDRESS_VILLAGES  VARCHAR2(70),
+   ADDRESS_TOWN  VARCHAR2(70),
+   ADDRESS_COUNTY  VARCHAR2(70) NOT NULL,
+   ADDRESS_CITY  VARCHAR2(70) NOT NULL,
+   ADDRESS_PROVINCE  VARCHAR2(70) NOT NULL,
+   POST_CODE  VARCHAR2(6),
+   EMPLOY_NAME  VARCHAR2(50),
+   EMPLOY_TEL  VARCHAR2(15),
+   PROF_TYPE_CODE  VARCHAR2(5),
+   PROF_TYPE_NAME  VARCHAR2(5),
+   RELATION_NAME  VARCHAR2(10),
+   RELATION_TEL  VARCHAR2(15),
+   RELATION_TYPE_CODE  VARCHAR2(20),
+   RELATION_TYPE_NAME  VARCHAR2(100),
+   RELATION_ADDRESS_HOUSE_NO  VARCHAR2(70),
+   RELATION_ADDRESS_VILLAGES  VARCHAR2(70),
+   RELATION_ADDRESS_TOWN  VARCHAR2(70),
+   RELATION_ADDRESS_COUNTY  VARCHAR2(70),
+   RELATION_ADDRESS_CITY  VARCHAR2(70),
+   RELATION_ADDRESS_PROVINCE  VARCHAR2(70),
+   GUARDIAN_NAME  VARCHAR2(40) NOT NULL,
+   GUARDIAN_TEL  VARCHAR2(40) NOT NULL,
+   GUARDIAN_ADDR  VARCHAR2(100) NOT NULL,
+   GUARDIAN_RELATION_CODE  VARCHAR2(20) NOT NULL,
+   GUARDIAN_RELATION_NAME  VARCHAR2(100) NOT NULL,
+   GUARDIAN_IDCARD  VARCHAR2(40) NOT NULL,
+   ABO_BLOOD_CODE  VARCHAR2(5),
+   ABO_BLOOD_NAME  VARCHAR2(5),
+   RH_BLOOD_CODE  VARCHAR2(5),
+   RH_BLOOD_NAME  VARCHAR2(5),
+   REMARK  VARCHAR2(200),
+   CREATED_BY  VARCHAR2(50),
+   CREATE_DATETIME  DATE,
+   MODIFIED_BY  VARCHAR2(50),
+   MODIFY_DATETIME  DATE,
+    constraint DW_PATIENT primary key(HPID) ); 
+      comment on column DW_PATIENT.HPID is ' 医院自建患者ID ';
+      comment on column DW_PATIENT.NAME is ' 患者姓名 ';
+      comment on column DW_PATIENT.SEX_CODE is ' 性别代码 ';
+      comment on column DW_PATIENT.SEX_NAME is ' 性别名称 ';
+      comment on column DW_PATIENT.BIRTHDAY is ' 出生日期 ';
+      comment on column DW_PATIENT.TEL is ' 患者电话 ';
+      comment on column DW_PATIENT.CRED_TYPE_CODE is ' 证件类别代码 CV02.01.101身份证件类别代码';
+      comment on column DW_PATIENT.CRED_TYPE_NAME is ' 证件类别名称 ';
+      comment on column DW_PATIENT.CRED_NO is ' 证件号码 ';
+      comment on column DW_PATIENT.CARD_TYPE_CODE is ' 卡类型 0:居民健康卡, 1:院内就诊卡, 2:医保卡';
+      comment on column DW_PATIENT.CARD_NO is ' 卡号 ';
+      comment on column DW_PATIENT.IDCARD is ' 身份证号 ';
+      comment on column DW_PATIENT.MARITAL_STATUS_CODE is ' 婚姻状况代码 GB/T 2261.2-2003
+10.未婚20已婚21.初婚22.再婚23.复婚30.丧偶40.离婚90.未说明的婚姻状况';
+      comment on column DW_PATIENT.MARITAL_STATUS_NAME is ' 婚姻状况名称 GB/T 2261.2-2003';
+      comment on column DW_PATIENT.NATION_CODE is ' 民族代码 GB/T 3304-1991';
+      comment on column DW_PATIENT.NATION_NAME is ' 民族 GB/T 3304-1991';
+      comment on column DW_PATIENT.COUNTRY_CODE is ' 国籍代码 GB/T 2659-2000';
+      comment on column DW_PATIENT.COUNTRY_NAME is ' 国籍名称 ';
+      comment on column DW_PATIENT.ADDRESS_HOUSE_NO is ' 地址-门牌号码 ';
+      comment on column DW_PATIENT.ADDRESS_VILLAGES is ' 地址-村 ';
+      comment on column DW_PATIENT.ADDRESS_TOWN is ' 地址-乡 ';
+      comment on column DW_PATIENT.ADDRESS_COUNTY is ' 地址-县 ';
+      comment on column DW_PATIENT.ADDRESS_CITY is ' 地址-市 ';
+      comment on column DW_PATIENT.ADDRESS_PROVINCE is ' 地址-省 ';
+      comment on column DW_PATIENT.POST_CODE is ' 邮政编码 ';
+      comment on column DW_PATIENT.EMPLOY_NAME is ' 工作单位名称 ';
+      comment on column DW_PATIENT.EMPLOY_TEL is ' 工作单位电话号码 ';
+      comment on column DW_PATIENT.PROF_TYPE_CODE is ' 职业类别编码 GB/T 2261.4-2003';
+      comment on column DW_PATIENT.PROF_TYPE_NAME is ' 职业类别名称 GB/T 2261.4-2003';
+      comment on column DW_PATIENT.RELATION_NAME is ' 联系人姓名 ';
+      comment on column DW_PATIENT.RELATION_TEL is ' 联系人电话 ';
+      comment on column DW_PATIENT.RELATION_TYPE_CODE is ' 联系人与本人关系代码 ';
+      comment on column DW_PATIENT.RELATION_TYPE_NAME is ' 联系人与本人关系名称 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_HOUSE_NO is ' 联系人地址-门牌号码 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_VILLAGES is ' 联系人地址-村 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_TOWN is ' 联系人地址-乡 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_COUNTY is ' 联系人地址-县 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_CITY is ' 联系人地址-市 ';
+      comment on column DW_PATIENT.RELATION_ADDRESS_PROVINCE is ' 联系人地址-省 ';
+      comment on column DW_PATIENT.GUARDIAN_NAME is ' 监护人姓名 ';
+      comment on column DW_PATIENT.GUARDIAN_TEL is ' 监护人电话 ';
+      comment on column DW_PATIENT.GUARDIAN_ADDR is ' 监护人地址 ';
+      comment on column DW_PATIENT.GUARDIAN_RELATION_CODE is ' 监护人与本人关系代码 ';
+      comment on column DW_PATIENT.GUARDIAN_RELATION_NAME is ' 监护人与本人关系名称 ';
+      comment on column DW_PATIENT.GUARDIAN_IDCARD is ' 监护人身份证号 ';
+      comment on column DW_PATIENT.ABO_BLOOD_CODE is ' ABO血型代码 CV04.50.005';
+      comment on column DW_PATIENT.ABO_BLOOD_NAME is ' ABO血型名称 CV04.50.005';
+      comment on column DW_PATIENT.RH_BLOOD_CODE is ' Rh血型代码 CV04.50.020';
+      comment on column DW_PATIENT.RH_BLOOD_NAME is ' Rh血型名称 CV04.50.020';
+      comment on column DW_PATIENT.REMARK is ' 备注 ';
+      comment on column DW_PATIENT.CREATED_BY is ' 创建人 ';
+      comment on column DW_PATIENT.CREATE_DATETIME is ' 创建时间 ';
+      comment on column DW_PATIENT.MODIFIED_BY is ' 最后修改人 ';
+      comment on column DW_PATIENT.MODIFY_DATETIME is ' 最后修改时间 ';
